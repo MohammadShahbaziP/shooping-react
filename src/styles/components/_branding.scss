@@ -1,0 +1,44 @@
+.branding{
+    direction: ltr;
+    padding: 7rem $s-size;
+    @include clearfix;
+
+    &__icons{
+        font-size: $xl-size;
+        color:$color-secondary;
+    }
+
+    &__name{
+        font-weight: 400;
+        span{
+            color:$color-secondary;
+            font-weight: 100;
+            letter-spacing: 3px;
+            display: inline-block;
+            text-transform: capitalize;
+        }
+    }
+
+    &__country{
+        color:$color-secondary;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin-right: $xl-size;
+        text-align: left;
+
+    }
+
+    &__description{
+        font-size: $xl-size;
+        text-align: center;
+    }
+
+    &__slider{
+        float: right;
+        width: 50%;
+        @media (max-width:600px) {
+            width: 100%;   
+        }
+
+    }
+}

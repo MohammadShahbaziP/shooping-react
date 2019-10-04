@@ -1,0 +1,28 @@
+.footer{
+    background-color: darken($color-primary, 5%);
+    margin-top: $xl-size;
+    padding: $xl-size $s-size;
+    text-align: center;
+    &__social{
+        
+        &:link,
+        &:visited{
+            font-size: $xl-size;
+            color:$color-secondary;
+            margin: $s-size;
+            padding: $m-size;
+            transition:.5s        ;
+            -webkit-transition:.5s        ;
+            -moz-transition:.5s        ;
+            -ms-transition:.5s        ;
+            -o-transition:.5s        ;
+            @media (max-width:500px){
+                margin: 0;
+            }
+        }
+        &:hover{
+            color:$color-danger;
+        }
+
+    }
+}

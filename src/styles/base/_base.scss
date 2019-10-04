@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "far_zar";
+    src: url(./Far_Zar.ttf)
+}
+html {
+    font-size:62.5%;
+    @media(max-width:600px){
+        font-size: 50%;
+    }
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+body {
+    box-sizing:border-box;
+    font-family: "far_zar";
+    font-size:1.6rem;
+    color:$color-main;
+    direction: rtl;
+    background-color: $color-primary;
+
+}
+.swiper-container{
+    height: 100% !important;
+
+}

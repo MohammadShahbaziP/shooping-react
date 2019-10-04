@@ -1,0 +1,31 @@
+.details{
+    padding: $l-size 7rem;
+    @media (max-width:600px){
+        padding: 0;
+    }
+    &__img{
+        width: 100%;
+    }
+    &__compony,
+    &__name{
+        color:$color-secondary;
+        direction: ltr;
+        font-weight: 100;
+        margin-bottom: $s-size;
+
+    }
+
+    &__price{
+        text-align: center;
+        font-size: $xl-size;
+    }
+
+    &__box{
+        width: 100%;
+        padding: $m-size;
+        margin: $m-size 0;
+        font-size:$l-size;
+        border-right:1px solid $color-secondary;
+
+    }
+}

@@ -1,0 +1,34 @@
+.card{
+    text-align: center;
+    cursor: pointer;
+    background-color: $color-warning;
+    height: 80%;
+
+    &-slider__container{
+        direction: ltr;
+        height: 30rem;
+        padding: $m-size 3px;
+    }
+
+    &__img{
+        width: 90%;
+        display: block;
+        margin: 6px auto;
+        height: 50%;
+    }
+
+    &__price--off{
+        text-decoration: line-through $color-danger;
+        display: inline-block;
+        margin: 0 4px 0 0;
+    }
+    span{
+        background: $color-danger;
+        padding: 5px;
+        border-radius: 50%    ;
+        -webkit-border-radius: 50%    ;
+        -moz-border-radius: 50%    ;
+        -ms-border-radius: 50%    ;
+        -o-border-radius: 50%    ;
+    }
+}
