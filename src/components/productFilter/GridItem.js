@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { addToCart } from '../../actions/cart'
 import { useGlobalState } from '../../context/Context'
+import formatMoney from '../../utilites/formatMoney'
 
 const GridItem =(props)=>{
     const [,dispatch]=useGlobalState()
@@ -17,12 +18,12 @@ const GridItem =(props)=>{
             {
                 props.off ? (
                     <div>
-                        <p className="card__price--off">{props.cost} t </p>
+                        <p className="card__price--off">{formatMoney(`${props.cost}`)} تومان </p>
                         <span>{props.off}%</span>
-                        <p className="card__price--off-actial">{props.cost -((props.cost * props.off) / 100)} t</p>
+                        <p className="card__price--off-actial">{formatMoney(`${props.cost -((props.cost * props.off) / 100)}`)} تومان</p>
                     </div>
                     ) : (
-                        <p className="card__price">{props.cost} t</p> 
+                        <p className="card__price">{formatMoney(`${props.cost}`)} تومان</p> 
                     )
             }
             <div className="flex">

@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useGlobalState } from '../context/Context'
-import productSelector from '../selectors/productSelector'
-import { addToCart } from '../actions/cart'
+import { useGlobalState } from '../../context/Context'
+import productSelector from '../../selectors/productSelector'
+import { addToCart } from '../../actions/cart'
+import formatMoney from '../../utilites/formatMoney'
 const ProductOverViewPage = (props)=>{
     const [{products},dispatch]=useGlobalState()
     const altProduct=productSelector(products,props.match.params.id) 
@@ -22,10 +23,10 @@ const ProductOverViewPage = (props)=>{
                 {
                     altProduct.off ? (
                         <div>
-                            <p className="details__price">{altProduct.cost -((altProduct.cost * altProduct.off) / 100)} تومان</p>
+                            <p className="details__price">{formatMoney(`${altProduct.cost -((altProduct.cost * altProduct.off) / 100)}`)} تومان</p>
                         </div>
                         ) : (
-                            <p className="details__price">{altProduct.cost} تومان</p> 
+                            <p className="details__price">{formatMoney(`${altProduct.cost}`)} تومان</p> 
                         )
                 } 
                 <div className="details__box">

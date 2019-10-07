@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import 'normalize.css'
 import {ProductProvider} from './context/Context'
 import AppRouter from './route/AppRouter'
 import { storeProducts } from './products'
 import shoppingReducer from './reducers/shoppingReducer'
 import './styles/style.scss'
+
 
 const jsx = (
     <ProductProvider initialState={{
@@ -28,4 +30,4 @@ ReactDOM.render(jsx, document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+serviceWorker.register();

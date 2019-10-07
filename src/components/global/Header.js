@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { TiShoppingCart } from 'react-icons/ti'
 import Counter from './Counter'
 import ShoppingPhone from '../../images/shoppin-phone.png'
+
 const Header = () => {
     // effect for header shrink 
     useEffect(() => {

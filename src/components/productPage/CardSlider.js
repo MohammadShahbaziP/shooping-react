@@ -6,6 +6,7 @@ import productBrandSelector from '../../selectors/productBrandSelector'
 import { useGlobalState } from '../../context/Context'
 import { openModal } from '../../actions/modal'
 import 'react-id-swiper/lib/styles/css/swiper.css'
+import formatMoney from '../../utilites/formatMoney'
 
 const CardSlider = ({ start, end, brand }) => {
     const [{ products }, dispatch] = useGlobalState()
@@ -24,6 +25,7 @@ const CardSlider = ({ start, end, brand }) => {
         dispatch(openModal({ ...product }))
     }
 
+
     return (
         <div className="card-slider">
             <div className="card-slider__container">
@@ -38,13 +40,13 @@ const CardSlider = ({ start, end, brand }) => {
                                         <h4 className="card__header">{product.name}</h4>
                                         {
                                             product.off ? (
-                                                <div>
-                                                    <p className="card__price--off">{product.cost} t </p>
+                                                <div className="card__price">
+                                                    <p className="card__price--off">{formatMoney(`${product.cost}`)} تومان </p>
                                                     <span>{product.off}%</span>
-                                                    <p className="card__price--off-actial">{product.cost - ((product.cost * product.off) / 100)} t</p>
+                                                    <p className="card__price--off-actial">{formatMoney(`${product.cost - ((product.cost * product.off) / 100)}`)} تومان</p>
                                                 </div>
                                             ) : (
-                                                    <p className="card__price">{product.cost} t</p>
+                                                    <p className="card__price">{formatMoney(`${product.cost}`)} تومان </p>
                                                 )
                                         }
                                     </div>

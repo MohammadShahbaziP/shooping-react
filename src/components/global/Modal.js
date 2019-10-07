@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { useGlobalState } from '../../context/Context'
 import { closeModal } from '../../actions/modal'
 import { addToCart } from '../../actions/cart'
+import formatMoney from '../../utilites/formatMoney'
+
 const Modal = () => {
     const [{ modalOpen, modalData }, dispatch] = useGlobalState()
     const handleCloseModal = (e) => {
@@ -26,10 +28,10 @@ const Modal = () => {
                         {
                             modalData.off ? (
                                 <div>
-                                    <p className="modal__price">{modalData.cost - ((modalData.cost * modalData.off) / 100)} تومان</p>
+                                    <p className="modal__price">{formatMoney(`${modalData.cost - ((modalData.cost * modalData.off) / 100)}`)} تومان</p>
                                 </div>
                             ) : (
-                                    <p className="modal__price">{modalData.cost} تومان</p>
+                                    <p className="modal__price">{formatMoney(`${modalData.cost}`)} تومان</p>
                             )
                         }
                     </div>

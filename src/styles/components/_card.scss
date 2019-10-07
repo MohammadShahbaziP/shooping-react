@@ -4,6 +4,10 @@
     background-color: $color-warning;
     height: 80%;
 
+    &__price{
+        direction: rtl;
+    }
+
     &-slider__container{
         direction: ltr;
         height: 30rem;
